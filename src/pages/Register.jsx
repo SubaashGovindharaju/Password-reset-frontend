@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { backendUrl } from '../config';
+// import { backendUrl } from '../config';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Register.module.css';
 
@@ -31,7 +31,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const registerResponse = await fetch(`${backendUrl}/auth/register`, {
+    const registerResponse = await fetch(`https://password-reset-backend-gazk.onrender.com/api/auth/register`, {
       method: 'POST',
       body: JSON.stringify({ name, email, password }),
       headers: {
