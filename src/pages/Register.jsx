@@ -42,7 +42,7 @@ const Register = () => {
       },
     });
 
-    const data = await registerResponse.json();
+    // const data = await registerResponse.json();
     if (registerResponse.status === 409) {
       alert('User already found');
     } else
@@ -50,7 +50,7 @@ const Register = () => {
         alert('Error in registring');
       }
       else {
-        console.log(data);
+        alert('User registered successfully');
         handleReset();
         navigate("/login");
       }
