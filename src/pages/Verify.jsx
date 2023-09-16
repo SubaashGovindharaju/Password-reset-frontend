@@ -20,7 +20,7 @@ const Verify = () => {
         console.log(data === true);
         if (data === true) {
             alert('Login Success');
-            navigate("/login");
+            navigate("/Reset");
         } else {
             alert('Login failed');
         }
