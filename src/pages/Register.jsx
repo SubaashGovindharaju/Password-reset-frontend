@@ -43,11 +43,17 @@ const Register = () => {
     });
 
     const data = await registerResponse.json();
-
-    console.log(data);
-    handleReset();
-    navigate("/login");
-
+    if (registerResponse.status === 409) {
+      alert('User already found');
+    } else
+      if (registerResponse.status === 500) {
+        alert('Error in registring');
+      }
+      else {
+        console.log(data);
+        handleReset();
+        navigate("/login");
+      }
   };
 
 
@@ -59,8 +65,8 @@ const Register = () => {
             <h1 className={styles.head}>Register</h1>
             <span className={styles.span}>or <Link to={'/login'}>Sign In?</Link></span>
             <input className={styles.input} type="text" placeholder="Enter your name" value={name} onChange={handleNameChange} required />
-            <input  className={styles.input} type="email" placeholder="Enter your email" value={email} onChange={handleEmailChange} required />
-            <input  className={styles.input} type="password" placeholder="Enter your password" value={password} onChange={handlePasswordChange} required />
+            <input className={styles.input} type="email" placeholder="Enter your email" value={email} onChange={handleEmailChange} required />
+            <input className={styles.input} type="password" placeholder="Enter your password" value={password} onChange={handlePasswordChange} required />
             <Link to={'/EmailCheck'}>Forgot your password?</Link>
             <button className={styles.button}>Register</button>
           </form>
