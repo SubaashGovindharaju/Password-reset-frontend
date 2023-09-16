@@ -29,9 +29,9 @@ const EmailCheck = () => {
         });
         const data = await loginResponse.json();
         if (loginResponse.status === 404) {
-            alert('user not found');
+            alert('User not found');
         } else {
-            alert("check your mail");
+            alert("Please check your mail");
             console.log(data.responceObj.email);
             handleReset();
             navigate("/login");

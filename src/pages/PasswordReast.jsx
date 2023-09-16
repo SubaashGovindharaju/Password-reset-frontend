@@ -36,7 +36,7 @@ const Reset = () => {
         });
 
         if (registerResponse.status === 404) {
-            alert('error in reseting');
+            alert('Password reseting failed');
         } else {
             alert("Password changed succesfully");
             handleReset();

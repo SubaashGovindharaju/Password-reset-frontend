@@ -5,7 +5,6 @@ import styles from './Verify.module.css';
 
 
 const Verify = () => {
-
     const [params,] = useSearchParams();
     const navigate = useNavigate();
     const verifyUser = async () => {
@@ -19,10 +18,10 @@ const Verify = () => {
         const data = await Response.json();
         console.log(data === true);
         if (data === true) {
-            alert('Login Success');
+            alert('Verifyed Successfully');
             navigate("/Reset");
         } else {
-            alert('Login failed');
+            alert('Verification failed');
         }
     }
     useEffect(() => {

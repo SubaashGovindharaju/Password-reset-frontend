@@ -41,20 +41,7 @@ const Register = () => {
         'Content-Type': 'application/json',
       },
     });
-    // const payload={
-    //   name:name,
-    //   email: email,
-    //   password: password
-    // }
-    // await axios.post('http://localhost:8000/api/auth/register', {payload})
-    //   .then((response) => {
-    //     console.log('Response:', response.data);
-    //     // this.setState({ responseMessage: 'Post created successfully!' });
-    //   })
-    //   .catch((error) => {
-    //     console.error('Error:', error);
-    //     // this.setState({ responseMessage: 'Error creating the post.' });
-    //   });
+
     const data = await registerResponse.json();
 
     console.log(data);
