@@ -7,7 +7,6 @@ import EmailCheck from './pages/EmailCheck';
 import PrivateRoute from './PrivateRoute';
 import Reset from './pages/PasswordReast';
 import Verify from './pages/Verify';
-
 const App = () => {
 
   return (

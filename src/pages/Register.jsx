@@ -1,7 +1,10 @@
 import { useState } from 'react';
-// import { backendUrl } from '../config';
+import { backendUrl } from '../config';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Register.module.css';
+// import axios from 'axios';
+
+
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -31,14 +34,29 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const registerResponse = await fetch(`https://password-reset-backend-gazk.onrender.com/api/auth/register`, {
+    const registerResponse = await fetch(`${backendUrl}/auth/register`, {
       method: 'POST',
       body: JSON.stringify({ name, email, password }),
       headers: {
         'Content-Type': 'application/json',
       },
     });
+    // const payload={
+    //   name:name,
+    //   email: email,
+    //   password: password
+    // }
+    // await axios.post('http://localhost:8000/api/auth/register', {payload})
+    //   .then((response) => {
+    //     console.log('Response:', response.data);
+    //     // this.setState({ responseMessage: 'Post created successfully!' });
+    //   })
+    //   .catch((error) => {
+    //     console.error('Error:', error);
+    //     // this.setState({ responseMessage: 'Error creating the post.' });
+    //   });
     const data = await registerResponse.json();
+
     console.log(data);
     handleReset();
     navigate("/login");
